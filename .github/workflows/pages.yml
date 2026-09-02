@@ -79,12 +79,24 @@ jobs:
         run: |
           ls -la out || true
 
+      - name: Upload `out` artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: out
+          path: ./out
+
   deploy:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Download `out` artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: out
+          path: ./out
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
