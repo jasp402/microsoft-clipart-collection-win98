@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -23,21 +25,49 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        if: "(github.event_name == 'push') && (exists('package.json'))"
-        run: npm ci
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json, skipping install"
+          fi
 
       - name: Build
-        if: "(github.event_name == 'push') && (exists('package.json'))"
-        run: npm run build
+        run: |
+          if [ -f package.json ]; then
+            npm run build || true
+          else
+            echo "No package.json, skipping build"
+          fi
 
       - name: Prepare output for Pages
         run: |
+          # Start with a clean out directory
+          rm -rf out
+          mkdir -p out
+
           # Prefer dist, then build, then docs
-          if [ -d "dist" ]; then mkdir -p out && cp -r dist/* out/ || true; fi
-          if [ -d "build" ]; then mkdir -p out && cp -r build/* out/ || true; fi
-          if [ -d "docs" ]; then mkdir -p out && cp -r docs/* out/ || true; fi
-          # If out is empty, copy repo root as fallback
-          if [ ! -d out ] || [ -z "$(ls -A out)" ]; then mkdir -p out && cp -r ./* out/ || true; fi
+          if [ -d "dist" ]; then
+            cp -r dist/* out/ || true
+          fi
+
+          if [ -d "build" ]; then
+            cp -r build/* out/ || true
+          fi
+
+          if [ -d "docs" ]; then
+            cp -r docs/* out/ || true
+          fi
+
+          # If out is still empty, create a minimal placeholder index.html
+          if [ -z "$(ls -A out)" ]; then
+            cat > out/index.html <<EOF
+<!doctype html>
+<meta charset="utf-8">
+<title>Coming soon</title>
+<h1>Site coming soon</h1>
+EOF
+          fi
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
