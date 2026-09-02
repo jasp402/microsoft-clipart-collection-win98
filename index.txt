@@ -1,0 +1,20 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+4:I[2619,["345","static/chunks/app/not-found-5338945e7e767827.js"],""]
+5:I[1959,[],"ClientPageRoot"]
+6:I[7108,["600","static/chunks/600-0230c102abc514c6.js","974","static/chunks/app/page-210035a429760235.js"],"default"]
+9:I[4431,[],"OutletBoundary"]
+b:I[5278,[],"AsyncMetadataOutlet"]
+d:I[4431,[],"ViewportBoundary"]
+f:I[4431,[],"MetadataBoundary"]
+10:"$Sreact.suspense"
+12:I[7150,[],""]
+:HL["/_next/static/css/a49a46da878e5608.css","style"]
+0:{"P":null,"b":"uwRnu_x6sIShU1NeIRQfX","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/a49a46da878e5608.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"h-full","children":["$","body",null,{"className":"h-full antialiased font-sans select-none","suppressHydrationWarning":true,"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"min-h-screen w-full flex flex-col items-center justify-center bg-[#008080] text-zinc-900 p-4","children":["$","div",null,{"className":"w-full max-w-md bg-[#c0c0c0] border-2 border-white shadow-2xl p-4","children":[["$","div",null,{"className":"bg-gradient-to-r from-[#000080] to-[#1084d0] text-white px-2 py-1 flex items-center justify-between text-xs font-bold mb-4","children":["$","span",null,{"children":"Error 404 - Page Not Found"}]}],["$","div",null,{"className":"p-4 bg-white border border-zinc-500 mb-4 text-xs space-y-2","children":[["$","p",null,{"className":"font-bold text-sm","children":"File not found in Microsoft Clip Gallery"}],["$","p",null,{"className":"text-zinc-600","children":"The requested resource could not be located in the 57,000+ vector clipart library."}]]}],["$","div",null,{"className":"flex justify-end","children":["$","$L4",null,{"href":"/","className":"px-4 py-1.5 bg-[#c0c0c0] hover:bg-zinc-300 text-black border-2 border-t-white border-l-white border-b-zinc-800 border-r-zinc-800 font-bold text-xs","children":"Return to Gallery"}]}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L5",null,{"Component":"$6","searchParams":{},"params":{},"promises":["$@7","$@8"]}],null,["$","$L9",null,{"children":["$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Ld",null,{"children":"$Le"}],null],["$","$Lf",null,{"children":["$","div",null,{"hidden":true,"children":["$","$10",null,{"fallback":null,"children":"$L11"}]}]}]]}],false]],"m":"$undefined","G":["$12",[]],"s":false,"S":true}
+7:{}
+8:"$0:f:0:1:2:children:1:props:children:0:props:params"
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+c:{"metadata":[["$","title","0",{"children":"Microsoft Clip Gallery"}],["$","meta","1",{"name":"description","content":"Retro 90s vector art gallery with lazy loading and instant search for the legendary Microsoft Office Clip Art SVG archive."}],["$","meta","2",{"property":"og:title","content":"Microsoft Clip Gallery"}],["$","meta","3",{"property":"og:description","content":"Retro 90s vector art gallery with lazy loading and instant search for the legendary Microsoft Office Clip Art SVG archive."}],["$","meta","4",{"property":"og:type","content":"website"}],["$","meta","5",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","6",{"name":"twitter:title","content":"Microsoft Clip Gallery"}],["$","meta","7",{"name":"twitter:description","content":"Retro 90s vector art gallery with lazy loading and instant search for the legendary Microsoft Office Clip Art SVG archive."}]],"error":null,"digest":"$undefined"}
+11:"$c:metadata"
