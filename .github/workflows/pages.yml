@@ -65,12 +65,10 @@ jobs:
 
           # If out is still empty, create a minimal placeholder index.html
           if [ -z "$(ls -A out)" ]; then
-            cat > out/index.html <<EOF
-<!doctype html>
-<meta charset="utf-8">
-<title>Coming soon</title>
-<h1>Site coming soon</h1>
-EOF
+            echo '<!doctype html>' > out/index.html
+            echo '<meta charset="utf-8">' >> out/index.html
+            echo '<title>Coming soon</title>' >> out/index.html
+            echo '<h1>Site coming soon</h1>' >> out/index.html
           fi
 
       - name: Upload artifact for GitHub Pages
