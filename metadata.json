@@ -1,0 +1,6 @@
+{
+  "name": "Microsoft Clip Gallery",
+  "description": "Retro 90s vector art gallery with lazy loading and instant search for the legendary Microsoft Office Clip Art SVG archive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Retro 3D Outset (Raised Button/Window) */
+  .retro-outset {
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px #808080;
+  }
+
+  /* Retro 3D Inset (Sunken field/viewport) */
+  .retro-inset {
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: inset 1px 1px 0px #000000, inset -1px -1px 0px #dfdfdf;
+  }
+
+  /* Retro 3D Button Active / Pressed */
+  .retro-button-pressed {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: inset 1px 1px 0px #808080, inset -1px -1px 0px #dfdfdf;
+    transform: translate(1px, 1px);
+  }
+
+  /* Retro Groove (Divider line) */
+  .retro-groove {
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  /* Retro Ridge */
+  .retro-ridge {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #808080;
+  }
+
+  /* Checkerboard pattern for transparent vectors */
+  .bg-checkers {
+    background-color: #ffffff;
+    background-image: 
+      linear-gradient(45deg, #e5e7eb 25%, transparent 25%), 
+      linear-gradient(-45deg, #e5e7eb 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #e5e7eb 75%), 
+      linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  }
+
+  /* Retro Scanlines */
+  .retro-scanlines {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.15) 50%
+    );
+    background-size: 100% 4px;
+  }
+}
+
+/* Retro pixel scrollbars */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #dfdfdf;
+  box-shadow: inset 1px 1px 0px #808080, inset -1px -1px 0px #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #404040;
+  border-bottom: 2px solid #404040;
+  box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px #808080;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #b0b0b0;
+  border-top: 2px solid #404040;
+  border-left: 2px solid #404040;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* Custom font styles */
+body {
+  font-family: 'Segoe UI', Tahoma, 'MS Sans Serif', Geneva, Verdana, sans-serif;
+  image-rendering: auto;
+}
+
