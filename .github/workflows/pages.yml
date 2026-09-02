@@ -1,0 +1,52 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        if: "(github.event_name == 'push') && (exists('package.json'))"
+        run: npm ci
+
+      - name: Build
+        if: "(github.event_name == 'push') && (exists('package.json'))"
+        run: npm run build
+
+      - name: Prepare output for Pages
+        run: |
+          # Prefer dist, then build, then docs
+          if [ -d "dist" ]; then mkdir -p out && cp -r dist/* out/ || true; fi
+          if [ -d "build" ]; then mkdir -p out && cp -r build/* out/ || true; fi
+          if [ -d "docs" ]; then mkdir -p out && cp -r docs/* out/ || true; fi
+          # If out is empty, copy repo root as fallback
+          if [ ! -d out ] || [ -z "$(ls -A out)" ]; then mkdir -p out && cp -r ./* out/ || true; fi
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./out
+
+  deploy:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
